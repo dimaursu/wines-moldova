@@ -1,0 +1,45 @@
+@import 'colors';
+
+.header-cover {
+    height: auto;
+    width: 100%;
+    margin-bottom: -8px;
+}
+
+.menu.topcoat-button-bar {
+    .topcoat-button-bar__item {
+        width: 25%;
+    }
+    .topcoat-button-bar__button{
+        width: 100%;
+    }
+    img {
+        display: block;
+        width: 2.8rem;
+        margin: 0 auto;
+        padding-top: 0.5rem;
+    }
+    span {
+        text-transform: uppercase;
+    }
+    width: 100%;
+    height: 80px;
+}
+
+.degustation {
+    color: #7f8c8d;
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.topcoat-button {
+    text-transform: uppercase;
+    color: $primary;
+    background-color: $button;
+    &:hover, &:active {
+        background-color: darken($button, 10%);
+    }
+}

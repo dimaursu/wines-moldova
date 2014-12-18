@@ -3,23 +3,8 @@
 ---
 @charset "utf-8";
 
-
-
-// Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
-
-$spacing-unit:     30px;
-
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
+@import 'colors';
+@import 'fonts';
 
 // Width of the content area
 $content-width:    800px;
@@ -43,10 +28,33 @@ $on-laptop:        800px;
 }
 
 
+/* module */
+/* END  module */
 
+/* state */
+/* END  state */
+
+/* theme */
+/* END  theme */
+
+.menu.topcoat-button-bar {
+    .topcoat-button-bar__item {
+        border-radius: 0;
+        border: none;
+    }
+    .topcoat-button-bar__button{
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+        margin: 0 auto;
+        color: $primary;
+        background-color: $secondary;
+    }
+}
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
         "layout",
-        "syntax-highlighting"
+        "navbar",
+        "home"
 ;
