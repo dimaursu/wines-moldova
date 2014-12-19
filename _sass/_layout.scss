@@ -1,1 +1,43 @@
+@import 'colors';
 
+.card {
+    /* clear floats */
+    overflow: auto;
+    width: 100%;
+
+    border-bottom: solid 1px $text;
+
+    .spotlight {
+        position: relative;
+        float: left;
+        width: 5.2rem;
+        height: 5.2rem;
+        margin: 0.6rem;
+        margin-right: 1.2rem;
+        background-color: $primary;
+        border-radius: 50%;
+
+        img {
+            height: 4.2rem;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+    }
+    .nextArrow {
+
+    }
+    .label {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 0.1rem;
+    }
+    .company {
+        margin: 0;
+        font-size: 0.8rem;
+        color: $text;
+    }
+}

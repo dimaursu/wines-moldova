@@ -4,6 +4,7 @@
   "dependencies": {
     "topcoat-touch": "*",
     "mustache": "~0.8.2",
-    "fragment.js": "*"
+    "fragment.js": "*",
+    "icanhaz": "~0.10.3"
   }
 }

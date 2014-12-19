@@ -1,3 +1,4 @@
+@import 'colors';
 
 .topcoat-navigation-bar__title > img {
     height: 3rem;
@@ -13,6 +14,7 @@ body.left-nav .topcoat-navigation-bar, body.left-nav .content {
     width:100%;
     padding: 0.5rem;
     box-shadow: none;
+    background-color: $primary;
     z-index:100;
     transition: left 0.2s ease-out;
     -webkit-transition: left 0.2s ease-out;

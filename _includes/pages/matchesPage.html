@@ -1,8 +1,26 @@
 <div id="matchesPage">
   {% include menu.html %}
   <div class="content scrollable">
-    <form class="testForm" method="post" action="#">
-    </form>
+    <ul id="foodList" class="topcoat-list"></ul>
   </div>
 </div>
+<script>
+$(document).ready(function () {
+var root = $('#foodList');
+
+  $.getJSON(dataSource + "wines/food", function (data) {
+    $.each(data.data, function (key, element) {
+
+      var domEl = '<li data-id="' + element.id +
+          '" class="foodItem card"><div class="spotlight"><img src="' +
+          element.images[0].styles.thumbnail + '"></div>' +
+          '<p class="label">' + element.label + '</p>' +
+          '<div class="nextArrow"></div></li>';
+
+      root.append(domEl);
+    });
+  });
+});
+
+</script>
 

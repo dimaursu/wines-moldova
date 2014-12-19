@@ -4,8 +4,6 @@
  */
 $(document).ready(function() {
 
-
-
     // Create the topcoatTouch object
     var tt = new TopcoatTouch({});
     // First page we go to home...  This could be done in code by setting the class to 'page page-center', but here is how to do it in code...
@@ -13,18 +11,12 @@ $(document).ready(function() {
 
     var carouselScroll = null;
 
-    tt.on(tt.EVENTS.MENU_ITEM_CLICKED, function(page, id) {
-        if (id == 'help') {
-            tt.goTo('help', 'slidedown', true);
-        } else if (id == 'info') {
-            tt.goTo('info', 'flip', true);
-        } else if (id == 'about') {
-            tt.goTo('about', 'pop', true);
-        }
-    });
-
     tt.on('click', 'button', 'help about info', function() {
         tt.goBack();
+    });
+
+    tt.on('click', 'li.wineItem', function() {
+        console.log("clicked");
     });
 
     // Show the loading message...
