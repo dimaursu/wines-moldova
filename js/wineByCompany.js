@@ -5,14 +5,14 @@ $(document).ready(function () {
 
   var tt = new TopcoatTouch();
 
-  tt.on('click', 'li.foodItem', function () {
+  tt.on('click', 'li.wineryItem', function () {
 
     tt.goTo('wineFoodMatchingTemplate');
 
     var wineMatchesList = $('#wineMatchesList');
 
     // Define fetch URL.
-    var url = dataSource + "wines?filter[language]=en&filter[food]=" + $(this).data('id') + "&sort=label";
+    var url = dataSource + "wines?filter[language]=en&filter[company]=" + $(this).data('id') + "&sort=label";
 
     // Get json from URL.
     $.getJSON(url, function (data) {
