@@ -97,5 +97,11 @@ $(document).ready(function() {
 
     createPlaceHolder('kittens');
 
+    $('a button').on('touchstart', function(e){
+        $(this).addClass('tapped');
+    });
 
+    $('a button').on('touchend', function(e){
+        $(this).removeClass('tapped');
+    });
 });
