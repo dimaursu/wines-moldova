@@ -1,8 +1,28 @@
 <div id="eventsPage">
   {% include menu.html %}
   <div class="content scrollable">
-    <form class="testForm" method="post" action="#">
-    </form>
+    <ul id="eventList" class="topcoat-list"></ul>
   </div>
 </div>
+<script>
+$(document).ready(function () {
+var root = $('#eventList');
+
+  $.getJSON(dataSource + "events", function (data) {
+    $.each(data.data, function (key, element) {
+
+      var domEl = '<li data-id="' + element.id +
+        '" class="eventItem eventCard"><img src="' +
+          element.image.styles.large + '">' +
+          '<p class="date">' + element.date + '</p>' +
+          '<p class="label">' + element.label + '</p>' +
+          '<p class="price">' + element.price + ' Lei</p>' +
+          '<p class="eventType">Event</p>' +
+          '</li>';
+
+      root.append(domEl);
+    });
+  });
+});
+</script>
 
