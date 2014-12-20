@@ -1,0 +1,35 @@
+<div id="wineTemplate">
+  {% include menu.html %}
+    <div class="content scrollable">
+      <div id="wineAnchor"></div>
+  </div>
+  <script id="wine-template" type="text/html">
+  <div class="quarter">
+    <img src="{image}" alt="">
+  </div>
+  <div class="half">
+    <h1>{label}</h1>
+    <p>{type} wine</p>
+    <p class="description">{description}</p>
+  </div>
+  <div class="topcoat-tab-bar">
+    <label class="topcoat-tab-bar__item" for="">
+      <input class="tab-bar" type="">
+      <button class="topcoat-tab-bar__button">{label}</button>
+    </label>
+    <label class="topcoat-tab-bar__item" for="">
+      <input class="tab-bar" type="">
+      <button class="topcoat-tab-bar__button">Matches</button>
+    </label>
+    <label class="topcoat-tab-bar__item" for="">
+      <input class="tab-bar" type="">
+      <button class="topcoat-tab-bar__button">Info</button>
+    </label>
+    <label class="topcoat-tab-bar__item" for="">
+      <input class="tab-bar" type="">
+      <button class="topcoat-tab-bar__button">Winery</button>
+    </label>
+  </div>
+  </script>
+</div>
+

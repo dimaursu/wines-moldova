@@ -4,6 +4,11 @@
     background-color: $primary;
 }
 
+.tapped {
+    filter: brightness(60%);
+    -webkit-filter: brightness(60%);
+}
+
 .card {
     /* clear floats */
     overflow: auto;
