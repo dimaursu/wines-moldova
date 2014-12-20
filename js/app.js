@@ -1,4 +1,3 @@
-"use strict";
 /**
  * Demo App for TopcoatTouch
  */
