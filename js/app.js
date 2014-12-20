@@ -9,36 +9,28 @@ $(document).ready(function() {
     // First page we go to home...  This could be done in code by setting the class to 'page page-center', but here is how to do it in code...
     tt.goTo('home');
 
-    var carouselScroll = null;
-
-    tt.on('click', 'button', 'help about info', function() {
-        tt.goBack();
-    });
-
     tt.on('click', 'li.wineItem', function() {
-        console.log("clicked");
-    });
+        tt.goTo('wineTemplate');
+        window.currentWineID = $(this).data('id');
+        var wine = _.filter(window.wineList, { id: currentWineID })[0];
+        var data = {
+            label:       wine.label,
+            company:     wine.company.label,
+            description: wine.body,
+            type:        wine.type[Object.keys(wine.type)].name,
+            image:       wine.images[0].styles.medium,
+            smell:       "Appealing aromas of the exotic fruit: mango, papaya and pineapple",
+            taste:       "Fresh and savoury in the moth, it is characterized by a delicate structure",
+            rating:       8
+        }
 
-    // Show the loading message...
-    $('#showLoading').click(function() {
-        tt.showLoading('10 seconds');
-        var count = 10;
-        var interval = setInterval(function() {
-            if (--count <= 0) {
-                clearInterval(interval);
-                tt.hideLoading();
-            } else {
-                $('#topcoat-loading-message').text(count + ' seconds');
-            }
-        },1000);
+        var source   = $("#wine-template").html();
+        var compiled = dust.compile(source, "wine");
+        dust.loadSource(compiled);
+        dust.render("wine", data, function(err, out) {
+            $("#wineAnchor").html(out);
+        });
     });
-
-    // Show the dialog...
-    $('#showDialog').click(function() {
-        tt.showDialog('This is a dialog', 'Example Dialog', {OK: function() { console.log('OK Pressed') }
-            , Cancel: function() { console.log('Cancel Pressed')}});
-    });
-
 
     tt.on(tt.EVENTS.PAGE_START, 'carouselExample', function() {
 
@@ -71,37 +63,11 @@ $(document).ready(function() {
         return false;
     });
 
-    function getRandomInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
-    }
-
-    // Create the placeholders in the gallery...
-    function createPlaceHolder(type) {
-        var placeHolders = { kittens : 'placekitten.com', bears: 'placebear.com', lorem: 'lorempixel.com',
-            bacon: 'baconmockup.com', murray: 'www.fillmurray.com'};
-        var gallery = '';
-        for (var i = 0; i < getRandomInt(50,100); i++) {
-            gallery += '<li class="photoClass" style="background:url(http://' + placeHolders[type] + '/' +
-                getRandomInt(200,300) + '/' + getRandomInt(200,300) + ') 50% 50% no-repeat"></li>';
-        }
-        $('.photo-gallery').html(gallery);
-        tt.refreshScroll(); // Refresh the scroller
-        tt.scrollTo(0,0);   // Move back to the top of the page...
-    }
-
-
-
-    $('#gallery-picker').change(function(e, id) {
-        createPlaceHolder(id);
-    });
-
-    createPlaceHolder('kittens');
-
-    $('a button').on('touchstart', function(e){
+    $('button, a').on('touchstart', function(e){
         $(this).addClass('tapped');
     });
 
-    $('a button').on('touchend', function(e){
+    $('button, a').on('touchend', function(e){
         $(this).removeClass('tapped');
     });
 });
