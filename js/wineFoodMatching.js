@@ -20,6 +20,8 @@ $(document).ready(function () {
 
       $.each(data.data, function (key, element) {
         itemData = {
+          id: element.id,
+          thumbnail: element.images[0].styles.thumbnail,
           label: element.label
         };
 
