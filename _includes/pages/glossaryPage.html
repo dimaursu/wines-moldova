@@ -1,8 +1,35 @@
 <div id="glossaryPage">
-  {% include menu.html %}
-  <div class="content scrollable">
-    <form class="testForm" method="post" action="#">
-    </form>
-  </div>
+    {% include menu.html %}
+
+    <div id="glossaryList-nav"></div>
+
+    <div class="content scrollable">
+        <div id="glossaryList" class="topcoat-list"></div>
+    </div>
 </div>
 
+<script>
+    $(document).ready(function () {
+        var root = $('#glossaryList');
+
+        $.getJSON(dataSource + "glossary?range=500", function (data) {
+
+            $.each(data.data, function (key, element) {
+
+                var domEl = '<li data-id="' + element.id + '" class="card">' +
+                        '<a href="#" class="label">' + element.label + '</a>' +
+                        '<p class="description">' + element.description + '</p>' +
+                        '</li>';
+
+                root.append(domEl);
+            });
+
+        });
+
+        $('#glossaryList').listnav({
+            noMatchText: 'Nothing matched your filter, please click another letter.',
+            prefixes: ['ln-']
+        });
+    });
+
+</script>

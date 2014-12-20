@@ -33,10 +33,17 @@
         console.log(domEl);
 
         */
+          var edition = '';
+
+         if (element.edition) {
+             edition = element.edition.label;
+         }
+
         var domEl = '<li data-id="' + element.id +'" class="wineItem card"><div class="spotlight"><img src="' +
             element.images[0].styles.thumbnail + '"></div>' +
+            '<p class="edition">' + element.vintage + ' ' + edition + '</p>' +
             '<p class="label">' + element.label + '</p>' +
-            '<p class="company">' + element.company.label + '/' + element.vintage +
+            '<p class="company">' + element.company.label +
             '</p><div class="nextArrow"></div></li>';
 
         root.append(domEl);
