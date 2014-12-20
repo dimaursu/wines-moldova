@@ -1,10 +1,10 @@
 <div id="glossaryPage">
     {% include menu.html %}
 
-    <div id="glossaryList-nav"></div>
+    <div id="glossaryList-nav" class="glossary center"></div>
 
     <div class="content scrollable">
-        <div id="glossaryList" class="topcoat-list"></div>
+        <div id="glossaryList" class="topcoat-list glossary"></div>
     </div>
 </div>
 
@@ -17,18 +17,19 @@
             $.each(data.data, function (key, element) {
 
                 var domEl = '<li data-id="' + element.id + '" class="card">' +
-                        '<a href="#" class="label">' + element.label + '</a>' +
+                        '<p class="label">' + element.label + '</p>' +
                         '<p class="description">' + element.description + '</p>' +
                         '</li>';
 
                 root.append(domEl);
             });
 
-        });
-
-        $('#glossaryList').listnav({
-            noMatchText: 'Nothing matched your filter, please click another letter.',
-            prefixes: ['ln-']
+            $('#glossaryList').listnav({
+                includeAll: true,
+                includeNums: false,
+                noMatchText: 'Nothing matched your filter, please click another letter.',
+                showCounts: false
+            });
         });
     });
 

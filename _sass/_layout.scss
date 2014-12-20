@@ -66,3 +66,44 @@
 .about.center {
         margin-top: 5rem;
 }
+
+
+.glossary {
+
+    .ln-letters {
+        background: white;
+    }
+
+    .ln-disabled {
+        display: none;
+    }
+
+    .ln-letters a {
+        padding: 0.35rem;
+        text-decoration: none;
+    }
+
+    .ln-letters a:link {
+        color: #7f8c8d;
+    }
+
+    .ln-letters a:visited {
+        color: #7f8c8d;
+    }
+
+    .ln-letters a:hover {
+        color: #7f8c8d;
+    }
+
+    .ln-letters a:active {
+        color: #7f8c8d;
+    }
+
+    .ln-letters .ln-selected {
+        border-bottom: 1px solid red;
+        font-size: 1.5rem;
+        color: #ffffff;
+        line-height: 3rem;
+        text-align: center;
+    }
+}
