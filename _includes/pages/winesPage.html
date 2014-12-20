@@ -17,7 +17,7 @@
   $(document).ready(function () {
     var root = $('#wineList');
 
-    $.getJSON(dataSource + "wines", function (data) {
+    $.getJSON(dataSource + "wines?sort=label&filter[language]=en", function (data) {
       window.wineList = data.data; // store the list, to avoid aditional calls
       $.each(data.data, function (key, element) {
         /*

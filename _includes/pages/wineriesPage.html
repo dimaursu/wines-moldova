@@ -8,7 +8,7 @@
 $(document).ready(function () {
 var root = $('#wineriesList');
 
-  $.getJSON(dataSource + "companies", function (data) {
+  $.getJSON(dataSource + "companies?sort=label&filter[language]=en", function (data) {
     $.each(data.data, function (key, element) {
 
       var domEl = '<li data-id="' + element.id +
