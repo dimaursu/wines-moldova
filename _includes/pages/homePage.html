@@ -1,7 +1,10 @@
 <div id="home">
   {% include menu.html %}
-  <div class="content scrollable"> <!-- containers with the class scrollable are automatically hooked into iscroll -->
-    <img class="header-cover" src="img/header-cover.jpg" alt="">
+  <div class="content scrollable">
+    <div class="header-cover">
+      <img class="logo" src="img/logo-big.png" alt="">
+      <div class="brand center">Wine Moldova</div>
+    </div>
     <div class="topcoat-button-bar menu">
       <div class="topcoat-button-bar__item">
         <button class="topcoat-button-bar__button" data-rel="matchesPage">
@@ -28,9 +31,13 @@
         </button>
       </div>
     </div>
-    <div class="degustation">Let's start the degustation and evaluate your wine tasting skills</div>
+    <div class="degustation">Play and learn with our guide</div>
     <div class="center">
-      <button  class="topcoat-button" data-rel="wineTastingPage">Wine testing</button>
+      <button  class="topcoat-button" data-rel="wineTastingPage">Wine tasting</button>
+    </div>
+    <div class="degustation">Already and expert? Evaluate the wine</div>
+    <div class="center">
+      <button  class="topcoat-button" data-rel="wineTastingPage">Wine rater</button>
     </div>
   </div>
 </div>

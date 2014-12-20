@@ -1,5 +1,9 @@
 @import 'colors';
 
+.content {
+    background-color: $primary;
+}
+
 .card {
     /* clear floats */
     overflow: auto;
@@ -29,7 +33,7 @@
         }
     }
     .nextArrow {
-        background: url("/img/icon-arrow.png") center no-repeat;
+        background: url("../img/icon-arrow.png") center no-repeat;
         background-size: 50%;
         position: absolute;
         top: 0;
