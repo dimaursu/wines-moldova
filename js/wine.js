@@ -5,8 +5,6 @@ function wineItem(tt, id) {
 
   tt.goTo('wineTemplate');
 
-  console.log(id);
-
   window.currentWineID = id;
 
   var wine = _.filter(window.wineList, {id: currentWineID})[0];

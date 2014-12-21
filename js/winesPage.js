@@ -40,8 +40,6 @@ function winesPage(tt) {
 
     });
 
-    console.log(itemData);
-
     $("#wineList").html(liItems);
 
   });
