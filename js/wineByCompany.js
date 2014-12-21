@@ -5,7 +5,7 @@ $(document).ready(function () {
 
   var tt = new TopcoatTouch();
 
-  tt.on('click', 'li.wineryItem', function () {
+  tt.on('click', 'li.wineryItem2', function () {
 
     tt.goTo('wineFoodMatchingTemplate');
 
