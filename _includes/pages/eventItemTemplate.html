@@ -1,0 +1,34 @@
+<div id="eventItemTemplate">
+    {% include menu.html %}
+    <div class="content scrollable">
+        <div id="eventItemContent" class="event"></div>
+    </div>
+</div>
+
+<!-- Template. -->
+<script id="event-item-template" type="text/html">
+
+    <img src="{thumbnail}">
+    <h2>{label}</h2>
+
+    <div class="topcoat-tab-bar center">
+        <label class="topcoat-tab-bar__item" for="">
+            <input class="tab-bar" type="">
+            <button class="topcoat-tab-bar__button">{date}</button>
+        </label>
+        <label class="topcoat-tab-bar__item" for="">
+            <input class="tab-bar" type="">
+            <button class="topcoat-tab-bar__button">{location}</button>
+        </label>
+        <label class="topcoat-tab-bar__item" for="">
+            <input class="tab-bar" type="">
+            <button class="topcoat-tab-bar__button">{price} lei</button>
+        </label>
+    </div>
+
+    <p>{description|s}</p>
+
+    <a class="topcoat-button--large--cta buy-button" href="{buy}" target="_blank">Visit</a>
+
+</script>
+
