@@ -27,8 +27,6 @@ function wineItem(tt, id) {
     });
   }
 
-  console.log(wine)
-
   // Head.
   var data = {
     id: id,
