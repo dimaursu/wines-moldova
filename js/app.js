@@ -41,12 +41,11 @@ $(document).ready(function() {
         winery(tt, $(this).data('id'));
     });
 
+    tt.on(tt.EVENTS.PAGE_START, 'wineRaterPage', function() {
+    }).on(tt.EVENTS.PAGE_END, 'wineRaterPage', function() {
 
     // *** Settings.
 
-    tt.on(tt.EVENTS.PAGE_START, 'wineTastingPage', function() {
-        alert("wine tasting page");
-    });
 
     tt.on(tt.EVENTS.PAGE_START, 'carouselExample', function() {
 

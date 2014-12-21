@@ -11,7 +11,7 @@
 
 .card {
     /* clear floats */
-    overflow: auto;
+    overflow: hidden;
     width: 100%;
     position: relative;
 
@@ -127,3 +127,4 @@
         max-height: 20%;
     }
 }
+

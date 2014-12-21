@@ -1,0 +1,49 @@
+.header {
+    color: $primary;
+    background-color: lighten(black, 15%);
+    font-size: 1.4rem;
+    line-height: 2rem;
+    padding: 0.5rem;
+    padding-left: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.green {
+    background-color: #2dcc70;
+}
+
+.rating {
+    overflow: hidden;
+    width: 100%;
+
+    .characteristic {
+        font-size: 1.2rem;
+        padding-left: 2rem;
+    }
+
+    .bubbles {
+        float: right;
+    }
+}
+
+.bubbles input[type="radio"] {
+    display: none;
+}
+
+.bubbles label {
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display:inline-block;
+    box-shadow: inset 0px -1px 3px 0px lighten($text, 20%);
+    background-color: #ecf0f1;
+    padding: 0.15rem 0.68rem;
+    font-size: 1.2rem;
+}
+
+.bubbles input[type="radio"]:checked + label {
+    background-color: $secondary;
+    color: $primary;
+    transition: all 0.3s;
+}
+
