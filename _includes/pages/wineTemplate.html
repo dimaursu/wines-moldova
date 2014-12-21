@@ -1,35 +1,31 @@
 <div id="wineTemplate">
-  {% include menu.html %}
+    {% include menu.html %}
     <div class="content scrollable">
-      <div id="wineAnchor"></div>
-  </div>
-  <script id="wine-template" type="text/html">
-  <div class="quarter">
-    <img src="{image}" alt="">
-  </div>
-  <div class="half">
-    <h1>{label}</h1>
-    <p>{type} wine</p>
-    <p class="description">{description|s}</p>
-  </div>
-  <div class="topcoat-tab-bar">
-    <label class="topcoat-tab-bar__item" for="">
-      <input class="tab-bar" type="">
-      <button class="topcoat-tab-bar__button">{label}</button>
-    </label>
-    <label class="topcoat-tab-bar__item" for="">
-      <input class="tab-bar" type="">
-      <button class="topcoat-tab-bar__button">Matches</button>
-    </label>
-    <label class="topcoat-tab-bar__item" for="">
-      <input class="tab-bar" type="">
-      <button class="topcoat-tab-bar__button">Info</button>
-    </label>
-    <label class="topcoat-tab-bar__item" for="">
-      <input class="tab-bar" type="">
-      <button class="topcoat-tab-bar__button">Winery</button>
-    </label>
-  </div>
-  </script>
+        <div id="wineAnchor"></div>
+    </div>
+    <script id="wine-template" type="text/html">
+        <div class="quarter">
+            <img src="{image}" alt="">
+        </div>
+        <div class="half">
+            <h1>{label}</h1>
+
+            <p>{type} wine</p>
+
+            <p class="description">{description|s}</p>
+        </div>
+
+        <ul>
+            <li class="active">Info</li>
+            <li><a data-id="{id}" id="foods-by-wine" href="#">Matches</a></li>
+            <li><a data-id="{cid}" id="company-by-wine" href="#">Winery</a></li>
+            <li><a id="buy-wine" href="http://wine.md/" target="_blank">Buy</a></li>
+        </ul>
+
+        <div class="wine-info">
+
+        </div>
+
+    </script>
 </div>
 

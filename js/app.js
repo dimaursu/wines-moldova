@@ -36,6 +36,11 @@ $(document).ready(function() {
         wineItem(tt, $(this).data('id'));
     });
 
+    // Wine item page.
+    tt.on('click', 'a#company-by-wine', function() {
+        winery(tt, $(this).data('id'));
+    });
+
 
     // *** Settings.
 

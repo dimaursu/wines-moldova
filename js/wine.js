@@ -17,7 +17,12 @@ function wineItem(tt, id) {
     type = wine.type[Object.keys(wine.type)].name;
   }
 
+  console.log(wine);
+  console.log(wine.company.id);
+
   var data = {
+    id: id,
+    cid: wine.company.id,
     label: wine.label,
     company: wine.company.label,
     description: wine.body,

@@ -25,23 +25,39 @@ function winery(tt, id) {
         var phoneData = [];
 
         // Email.
-        $.each(element.email, function (key, element) {
-          emailData.push(element.value);
-        });
+        if (element.email) {
+          $.each(element.email, function (key, element) {
+            emailData.push(element.value);
+          });
+        }
 
-        // Email.
-        $.each(element.phone, function (key, element) {
-          phoneData.push(element.value);
-        });
+        // Phone.
+        if (element.phone) {
+          $.each(element.phone, function (key, element) {
+            phoneData.push(element.value);
+          });
+        }
+
+        var location = '';
+
+        if (element.location) {
+          location = element.location;
+        }
+
+        var website = '';
+
+        if (element.website) {
+          website = '<a href="' + element.website[0].url + '" target="_blank">' + element.website[0].title + '</a>'
+        }
 
         contactData = {
           city: element.city.name,
           regcode: element.regcode.name,
-          location: element.location[0].value,
+          location: location,
           department: element.department[0].value,
           phone: phoneData.join(', '),
           email: emailData.join(', '),
-          website: '<a href="' + element.website[0].url + '" target="_blank">' + element.website[0].title + '</a>'
+          website: website
         };
 
         var source = $("#wine-item-contacts-template").html();
