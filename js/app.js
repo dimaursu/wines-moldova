@@ -45,45 +45,25 @@ $(document).ready(function() {
     }).on(tt.EVENTS.PAGE_END, 'wineRaterPage', function() {
     });
 
-    // *** Settings.
-
-
-    tt.on(tt.EVENTS.PAGE_START, 'carouselExample', function() {
-
-        // When the page is loaded, run the following...
-
-        // Setup iScroll..
-        carouselScroll = new IScroll('#carouselWrapper', {
-            scrollX: true,
-            scrollY: false,
-            momentum: false,
-            snap: true,
-            snapSpeed: 400,
-            keyBindings: true,
-            indicators: {
-                el: document.getElementById('carouselIndicator'),
-                resize: false
-            }
-        });
-    }).on(tt.EVENTS.PAGE_END, 'carouselExample', function() {
-        // When the page is unloaded, run the following...
-        if (carouselScroll != null) {
-            carouselScroll.destroy();
-            carouselScroll = null;
-        }
+    // Wines.
+    tt.on(tt.EVENTS.PAGE_START, 'winesPage', function() {
+        //
+    }).on(tt.EVENTS.PAGE_END, 'winesPage', function() {
     });
 
-    // Show a message when anyone clicks on button of the test form...
-    $('.testForm').submit(function() {
-        tt.showDialog('<h3>Button Clicked</h3>');
-        return false;
+    // Glossary.
+    tt.on(tt.EVENTS.PAGE_START, 'glossaryPage', function() {
+        glossaryPage(tt);
+    }).on(tt.EVENTS.PAGE_END, 'glossaryPage', function() {
+        $('#glossaryList').empty();
+        $('#glossaryList-nav').empty();
     });
 
-    $('button, a').on('touchstart', function(e){
+    $('button').on('touchstart', function(e){
         $(this).addClass('tapped');
     });
 
-    $('button, a').on('touchend', function(e){
+    $('button').on('touchend', function(e){
         $(this).removeClass('tapped');
     });
 });

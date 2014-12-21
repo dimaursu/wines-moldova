@@ -8,30 +8,11 @@
     </div>
 </div>
 
-<script>
-    $(document).ready(function () {
-        var root = $('#glossaryList');
+<script id="glossary-item-page" type="text/html">
 
-        $.getJSON(dataSource + "glossary?range=500", function (data) {
-
-            $.each(data.data, function (key, element) {
-
-                var domEl = '<li data-id="' + element.id + '" class="card">' +
-                        '<p class="label">' + element.label + '</p>' +
-                        '<p class="description">' + element.description + '</p>' +
-                        '</li>';
-
-                root.append(domEl);
-
-            });
-
-            $('#glossaryList').listnav({
-                includeAll: true,
-                includeNums: false,
-                noMatchText: 'Nothing matched your filter, please click another letter.',
-                showCounts: false
-            });
-        });
-    });
+    <li data-id="{id}" class="card">
+        <p class="label">{label}</p>
+        <p class="description">{description|s}</p>
+    </li>
 
 </script>

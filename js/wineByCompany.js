@@ -5,7 +5,6 @@ function wineByCompany(tt, id) {
 
     tt.goTo('wineFoodMatchingTemplate');
 
-
     // Define fetch URL.
     var url = dataSource + "wines?filter[language]=en&filter[company]=" + id + "&sort=label";
 
