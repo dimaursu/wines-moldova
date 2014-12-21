@@ -31,9 +31,10 @@ $(document).ready(function() {
         });
     });
 
-    tt.on(tt.EVENTS.PAGE_START, 'wineTastingPage', function() {
-        alert("wine tasting page");
+    tt.on(tt.EVENTS.PAGE_START, 'wineRaterPage', function() {
+    }).on(tt.EVENTS.PAGE_END, 'wineRaterPage', function() {
     });
+
 
     tt.on(tt.EVENTS.PAGE_START, 'carouselExample', function() {
 
