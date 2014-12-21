@@ -11,11 +11,22 @@ function wineFoodMatching(tt, id) {
   // Get json from URL.
   $.getJSON(url, function (data) {
 
+    var elements = data.data;
+
     var itemData = [];
 
     var liItems = '';
 
-    $.each(data.data, function (key, element) {
+    if (elements.length < 1) {
+      var source = $("#no-items-found-template").html();
+      var compiled = dust.compile(source, "wine");
+      dust.loadSource(compiled);
+      dust.render("wine", null, function (err, out) {
+        $("#no-wine-food-match-found").html(out);
+      });
+    }
+
+    $.each(elements, function (key, element) {
 
       var edition = '';
 
