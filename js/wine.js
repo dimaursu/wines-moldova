@@ -17,8 +17,15 @@ function wineItem(tt, id) {
     type = wine.type[Object.keys(wine.type)].name;
   }
 
-  console.log(wine);
-  console.log(wine.company.id);
+  var foodItems = '';
+
+  var output = '';
+
+  if (wine.food) {
+    $.each(wine.food, function (key, element) {
+      foodItem(tt, key);
+    });
+  }
 
   var data = {
     id: id,
