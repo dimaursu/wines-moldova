@@ -1,12 +1,12 @@
 <div id="matchesPage">
   {% include menu.html %}
   <div class="content scrollable">
-    <ul id="foodList" class="topcoat-list"></ul>
+    <ul id="foodListItems" class="topcoat-list"></ul>
   </div>
 </div>
 <script>
 $(document).ready(function () {
-var root = $('#foodList');
+var root = $('#foodListItems');
 
   $.getJSON(dataSource + "wines/food", function (data) {
     $.each(data.data, function (key, element) {

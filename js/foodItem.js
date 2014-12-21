@@ -27,7 +27,7 @@ function foodItem(tt, id) {
     var compiled = dust.compile(source, "wine");
     dust.loadSource(compiled);
     dust.render("wine", itemData, function (err, out) {
-      $("#wineTemplateFoodList").append(out);
+      $("#wineMatching").append(out);
     });
   });
 

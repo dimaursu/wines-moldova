@@ -3,35 +3,39 @@
     <div class="content scrollable">
         <div id="wineAnchor"></div>
     </div>
-    <script id="wine-template" type="text/html">
-        <div class="quarter">
-            <img src="{image}" alt="">
-        </div>
-        <div class="half">
-            <h1>{label}</h1>
-
-            <p>{type} wine</p>
-
-            <p class="description">{description|s}</p>
-        </div>
-
-        <ul>
-            <li class="active">Info</li>
-            <li><a data-id="{id}" id="foods-by-wine" href="#">Matches</a></li>
-            <li><a data-id="{cid}" id="company-by-wine" href="#">Winery</a></li>
-            <li><a id="buy-wine" href="http://wine.md/" target="_blank">Buy</a></li>
-        </ul>
-
-        <div class="wine-info">
-
-        </div>
-
-        <div class="wine-foods">
-            <div class="content scrollable">
-                <ul id="wineTemplateFoodList" class="topcoat-list"></ul>
-            </div>
-        </div>
-
-    </script>
 </div>
+
+<script id="wine-template" type="text/html">
+    <div class="quarter">
+        <img src="{image}" alt="">
+    </div>
+    <div class="half">
+        <h1>{label}</h1>
+        <p>{type} wine</p>
+        <p class="description">{description|s}</p>
+    </div>
+
+    <ul>
+        <li class="active">Info
+            <div id="wineInfo"></div>
+        </li>
+
+        <li><a data-id="{id}" id="foods-by-wine" href="#">Matches</a>
+            <div id="wineMatching"></div>
+        </li>
+
+        <li><a data-id="{cid}" id="company-by-wine" href="#">Winery</a></li>
+
+        <li><a id="buy-wine" href="http://wine.md/" target="_blank">Buy</a></li>
+    </ul>
+</script>
+
+<script id="wine-info-detailed" type="text/html">
+    <div class="producer">Producer: <span>{producer}</span></div>
+    <div class="region">Edition: <span>{edition}</span></div>
+    <div class="region">Vintage: <span>{vintage}</span></div>
+    <div class="typology">Typology: <span>{typology}</span></div>
+    <div class="alcohol">Alcohol: <span>{alcohol} %</span></div>
+    <div class="perception">Perception: <span>{perception}</span></div>
+</script>
 
