@@ -43,6 +43,7 @@ $(document).ready(function() {
 
     tt.on(tt.EVENTS.PAGE_START, 'wineRaterPage', function() {
     }).on(tt.EVENTS.PAGE_END, 'wineRaterPage', function() {
+    });
 
     // *** Settings.
 
