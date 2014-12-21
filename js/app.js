@@ -47,7 +47,7 @@ $(document).ready(function() {
 
     // Wines.
     tt.on(tt.EVENTS.PAGE_START, 'winesPage', function() {
-        //
+        winesPage(tt);
     }).on(tt.EVENTS.PAGE_END, 'winesPage', function() {
     });
 

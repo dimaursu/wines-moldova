@@ -4,63 +4,13 @@
     <ul id="wineList" class="topcoat-list"></ul>
   </div>
 </div>
-<script id="card" type="text/html">
-<li data-id="{{id}}" class="wineItem card">
-  <div class="spotlight"><img src={{image}}></div>
-  <p class="label">{{label}}</p>
-  <p class="company">{{info}}</p>
-  <img class="nextArrow" src="">
-</li>
-</script>
 
-<script>
-  $(document).ready(function () {
-    var root = $('#wineList');
-
-    $.getJSON(dataSource + "wines?sort=label&filter[language]=en", function (data) {
-      window.wineList = data.data; // store the list, to avoid aditional calls
-      $.each(data.data, function (key, element) {
-        /*
-        var item = {
-          "id":    key,
-          "image": element.images[0].styles.thumbnail,
-          "label": element.label,
-          "info":  element.company.label + '/' + element.vintage,
-        }
-
-
-        var domEl = ich.card(item, true);
-        console.log(domEl);
-
-        */
-          var edition = '';
-
-         if (element.edition) {
-             edition = element.edition.label;
-         }
-
-        var domEl = '<li data-id="' + element.id +'" class="wineItem card"><div class="spotlight"><img src="' +
-            element.images[0].styles.thumbnail + '"></div>' +
-            '<p class="edition">' + element.vintage + ' ' + edition + '</p>' +
-            '<p class="label">' + element.label + '</p>' +
-            '<p class="company">' + element.company.label +
-            '</p><div class="nextArrow"></div></li>';
-
-        root.append(domEl);
-      });
-
-
-      // on touch/click of a list item
-        // create a mustache template it and render it
-      $('.wineItem').map(function () {
-        $(this).on('touch', function () {
-   //       show_wine( $(this).data('id') );
-        });
-      });
-    });
-
-  });
- // function show_wine(wineId) {
- //   $.getJSON(dataSource + 'wines/' + wineId, function(wine) {
-
+<script id="wine-items-page" type="text/html">
+    <li data-id="{id}" class="wineItem card">
+        <div class="spotlight"><img src="{thumbnail}"></div>
+        <p class="edition">{vintage} {edition}</p>
+        <p class="label">{label}</p>
+        <p class="company">{company}</p>
+        <div class="nextArrow"></div>
+    </li>
 </script>
