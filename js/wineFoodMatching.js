@@ -1,18 +1,12 @@
 /**
  * Wine food matching model/controller.
  */
-$(document).ready(function () {
-
-  var tt = new TopcoatTouch();
-
-  tt.on('click', 'li.foodItem', function () {
+function wineFoodMatching(tt, id) {
 
     tt.goTo('wineFoodMatchingTemplate');
 
-    var wineMatchesList = $('#wineMatchesList');
-
     // Define fetch URL.
-    var url = dataSource + "wines?filter[language]=en&filter[food]=" + $(this).data('id') + "&sort=label";
+    var url = dataSource + "wines?filter[language]=en&filter[food]=" + id + "&sort=label";
 
     // Get json from URL.
     $.getJSON(url, function (data) {
@@ -64,6 +58,4 @@ $(document).ready(function () {
 
     });
 
-  });
-
-});
+};

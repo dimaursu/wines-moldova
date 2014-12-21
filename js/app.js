@@ -1,39 +1,50 @@
 /**
- * Demo App for TopcoatTouch
+ * WineMoldova application.
  */
 $(document).ready(function() {
 
     // Create the topcoatTouch object
     var tt = new TopcoatTouch({});
-    // First page we go to home...  This could be done in code by setting the class to 'page page-center', but here is how to do it in code...
+
+    // Go to home page.
     tt.goTo('home');
 
-    tt.on('click', 'li.wineItem', function() {
-        tt.goTo('wineTemplate');
-        window.currentWineID = $(this).data('id');
-        var wine = _.filter(window.wineList, { id: currentWineID })[0];
-        var data = {
-            label:       wine.label,
-            company:     wine.company.label,
-            description: wine.body,
-            type:        wine.type[Object.keys(wine.type)].name,
-            image:       wine.images[0].styles.medium,
-            smell:       "Appealing aromas of the exotic fruit: mango, papaya and pineapple",
-            taste:       "Fresh and savoury in the moth, it is characterized by a delicate structure",
-            rating:       8
-        }
+    // *** Routes.
 
-        var source   = $("#wine-template").html();
-        var compiled = dust.compile(source, "wine");
-        dust.loadSource(compiled);
-        dust.render("wine", data, function(err, out) {
-            $("#wineAnchor").html(out);
-        });
+    // Winery page.
+    tt.on('click', 'li.wineryItem', function () {
+        winery(tt, $(this).data('id'));
+    });
+
+    // Winery events.
+    tt.on('click', 'li.eventItem', function () {
+        eventPage(tt, $(this).data('id'));
+    });
+
+    // Wine food matching.
+    tt.on('click', 'li.foodItem', function () {
+        wineFoodMatching(tt, $(this).data('id'));
+    });
+
+    // View company wines
+    tt.on('click', 'a#view-company-wines', function () {
+        wineByCompany(tt, $(this).data('id'));
+    });
+
+    // Wine item page.
+    tt.on('click', 'li.wineItem', function() {
+        wineItem(tt, $(this).data('id'));
+    });
+
+    // Wine item page.
+    tt.on('click', 'a#company-by-wine', function() {
+        winery(tt, $(this).data('id'));
     });
 
     tt.on(tt.EVENTS.PAGE_START, 'wineRaterPage', function() {
     }).on(tt.EVENTS.PAGE_END, 'wineRaterPage', function() {
-    });
+
+    // *** Settings.
 
 
     tt.on(tt.EVENTS.PAGE_START, 'carouselExample', function() {

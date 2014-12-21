@@ -1,0 +1,30 @@
+<div id="wineryItemTemplate">
+    {% include menu.html %}
+    <div class="content scrollable">
+        <div id="wineItemContent" class="winery"></div>
+    </div>
+</div>
+
+<!-- Template. -->
+<script id="wine-item-template" type="text/html">
+
+    <img src="{thumbnail}">
+    <div class="label">Producer: <span>{label}</span></div>
+    <div class="contact"><div>{contacts|s}</div></div>
+    <div class="description">Description: <span>{description|s}</span></div>
+
+    <a data-id="{id}" id="view-company-wines" class="topcoat-button--large--cta wine-list-button" href="#">Wines</a>
+
+</script>
+
+<script id="wine-item-contacts-template" type="text/html">
+
+        <div>City: <span>{city}</span></div>
+        <div>Post code: <span>{regcode}</span></div>
+        <div>Address: <span>{location}</span></div>
+        <div>Department: <span>{department}</span></div>
+        <div>Phone: <span>{phone}</span></div>
+        <div>Email: <span>{email}</span></div>
+        <div>Website: <span>{website|s}</span></div>
+
+</script>
