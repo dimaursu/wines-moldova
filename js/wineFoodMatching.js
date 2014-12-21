@@ -17,7 +17,9 @@ function wineFoodMatching(tt, id) {
 
     var liItems = '';
 
-    if (elements.length < 1) {
+    $("#no-wine-food-match-found").empty();
+
+    if (elements.length == 0) {
       var source = $("#no-items-found-template").html();
       var compiled = dust.compile(source, "wine");
       dust.loadSource(compiled);
