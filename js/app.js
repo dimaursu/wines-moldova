@@ -45,10 +45,28 @@ $(document).ready(function() {
     }).on(tt.EVENTS.PAGE_END, 'wineRaterPage', function() {
     });
 
+    tt.on(tt.EVENTS.PAGE_START, 'home', function() {
+        var source = $("#start-buttons-template").html();
+        var compiled = dust.compile(source, "wine");
+        dust.loadSource(compiled);
+        dust.render("wine", null, function (err, out) {
+            $("#degustation-html").html(out);
+        });
+    }).on(tt.EVENTS.PAGE_END, 'home', function() {
+        // @TODO
+    });
+
     // Wines.
     tt.on(tt.EVENTS.PAGE_START, 'winesPage', function() {
         winesPage(tt);
     }).on(tt.EVENTS.PAGE_END, 'winesPage', function() {
+    });
+
+    // Wines.
+    tt.on(tt.EVENTS.PAGE_START, 'wineFoodMatchingTemplate', function() {
+        // Load wines then call this page.
+    }).on(tt.EVENTS.PAGE_END, 'wineFoodMatchingTemplate', function() {
+        // @TODO.
     });
 
     // Glossary.
