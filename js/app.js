@@ -31,6 +31,10 @@ $(document).ready(function() {
         });
     });
 
+    tt.on(tt.EVENTS.PAGE_START, 'wineTastingPage', function() {
+        alert("wine tasting page");
+    });
+
     tt.on(tt.EVENTS.PAGE_START, 'carouselExample', function() {
 
         // When the page is loaded, run the following...
