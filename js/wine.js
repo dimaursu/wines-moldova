@@ -5,6 +5,8 @@ function wineItem(tt, id) {
 
   tt.goTo('wineTemplate');
 
+  console.log(id);
+
   window.currentWineID = id;
 
   var wine = _.filter(window.wineList, {id: currentWineID})[0];
@@ -48,15 +50,29 @@ function wineItem(tt, id) {
     $("#wineAnchor").html(out);
   });
 
+  // Color.
+  var color = '';
+
+  if (wine.color) {
+    color = wine.color[Object.keys(wine.color)].name;
+  }
+
+  // Type.
+  var color = '';
+
+  if (wine.type) {
+    type = wine.type[Object.keys(wine.type)].name;
+  }
+
   // Details.
   var wineDetails = {
     id: id,
     cid: wine.company.id,
     producer: wine.company.label,
     edition: wine.edition.label,
-    typology: wine.color[Object.keys(wine.color)].name,
+    typology: color,
     alcohol: wine.alcohol,
-    perception: wine.type[Object.keys(wine.type)].name,
+    perception: type,
     vintage: wine.vintage
   };
 

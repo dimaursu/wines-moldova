@@ -9,6 +9,8 @@ function winesPage(tt) {
 
     var element = data.data;
 
+    window.wineList = element;
+
     var liItems = '';
 
     var itemData = {};
