@@ -3,59 +3,72 @@
  */
 function wineFoodMatching(tt, id) {
 
-    tt.goTo('wineFoodMatchingTemplate');
+  tt.goTo('wineFoodMatchingTemplate');
 
-    // Define fetch URL.
-    var url = dataSource + "wines?filter[language]=en&filter[food]=" + id + "&sort=label";
+  // Define fetch URL.
+  var url = dataSource + "wines?filter[language]=en&filter[food]=" + id + "&sort=label";
 
-    // Get json from URL.
-    $.getJSON(url, function (data) {
+  // Get json from URL.
+  $.getJSON(url, function (data) {
 
-      var itemData = [];
+    var elements = data.data;
 
-      var liItems = '';
+    var itemData = [];
 
-      $.each(data.data, function (key, element) {
+    var liItems = '';
 
-        var edition = '';
+    $("#no-wine-food-match-found").empty();
 
-        if (element.edition) {
-          edition = element.edition.label;
-        }
-
-        // Define line item variables.
-        itemData = {
-          id: element.id,
-          thumbnail: element.images[0].styles.thumbnail,
-          label: element.label,
-          vintage: element.vintage,
-          company: element.company.label,
-          edition: edition
-        };
-
-        // Process and render wine line item (li).
-        var source = $("#wine-food-matching-item-template").html();
-        var compiled = dust.compile(source, "wine");
-        dust.loadSource(compiled);
-        dust.render("wine", itemData, function (err, out) {
-          liItems += out;
-        });
-
-      });
-
-      // Define content variables.
-      templateData = {
-        content: liItems
-      };
-
-      // Process and render wine items (ul).
-      var source = $("#wine-food-matching-template").html();
+    if (elements.length == 0) {
+      var source = $("#no-items-found-template").html();
       var compiled = dust.compile(source, "wine");
       dust.loadSource(compiled);
-      dust.render("wine", templateData, function (err, out) {
-        $("#wineFoodMatchingList").html(out);
+      dust.render("wine", null, function (err, out) {
+        $("#no-wine-food-match-found").html(out);
+      });
+    }
+
+    $.each(elements, function (key, element) {
+
+      var edition = '';
+
+      if (element.edition) {
+        edition = element.edition.label;
+      }
+
+      // Define line item variables.
+      itemData = {
+        id: element.id,
+        thumbnail: element.images[0].styles.thumbnail,
+        label: element.label,
+        vintage: element.vintage,
+        company: element.company.label,
+        edition: edition
+      };
+
+      // Process and render wine line item (li).
+      var source = $("#wine-food-matching-item-template").html();
+      var compiled = dust.compile(source, "wine");
+      dust.loadSource(compiled);
+      dust.render("wine", itemData, function (err, out) {
+        liItems += out;
       });
 
     });
+
+    // Define content variables.
+    templateData = {
+      content: liItems
+    };
+
+    // Process and render wine items (ul).
+    var source = $("#wine-food-matching-template").html();
+    var compiled = dust.compile(source, "wine");
+    dust.loadSource(compiled);
+    dust.render("wine", templateData, function (err, out) {
+      $("#wineFoodMatchingList").html(out);
+    });
+
+  });
 
 };
