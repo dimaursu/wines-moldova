@@ -40,5 +40,9 @@ function winesPage(tt, url) {
 
   $("#wineList").html(liItems);
 
-    $("#wineList").html(liItems);
+  var myScroll;
+  myScroll = new IScroll('#wine-page-scroll-wrapper', {
+    mouseWheel: true,
+    scrollbars: true
+  });
 }
