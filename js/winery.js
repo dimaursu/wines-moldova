@@ -41,7 +41,7 @@ function winery(tt, id) {
         var location = '';
 
         if (element.location) {
-          location = element.location;
+          location = element.location[0].value;
         }
 
         var website = '';

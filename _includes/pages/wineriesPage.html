@@ -12,7 +12,7 @@ var root = $('#wineriesList');
     $.each(data.data, function (key, element) {
 
       var domEl = '<li data-id="' + element.id +
-          '" class="wineryItem card"><div class="spotlight"><img src="' +
+          '" class="wineryItem card"><div><img class="spotlight" src="' +
           element.images.styles.thumbnail + '"></div>' +
           '<p class="label">' + element.label + '</p>' +
           '<div class="nextArrow"></div></li>';
