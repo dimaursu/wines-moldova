@@ -1,3 +1,16 @@
+.title, .company {
+    margin-left: 0.5rem;
+}
+
+.points, .total {
+    margin-right: 0.5rem;
+}
+
+#comments {
+    width: 90%;
+    margin: 5%;
+}
+
 .header {
     color: $primary;
     background-color: lighten(black, 15%);
@@ -6,6 +19,7 @@
     padding: 0.5rem;
     padding-left: 2rem;
     margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .green {

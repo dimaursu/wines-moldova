@@ -42,7 +42,10 @@ $(document).ready(function() {
     });
 
     tt.on(tt.EVENTS.PAGE_START, 'wineRaterPage', function() {
+        wineRater();
     }).on(tt.EVENTS.PAGE_END, 'wineRaterPage', function() {
+        // send all this shit into the void
+        $('#wineRaterAnchor').remove();
     });
 
     tt.on(tt.EVENTS.PAGE_START, 'home', function() {
@@ -76,7 +79,7 @@ $(document).ready(function() {
         $('#glossaryList').empty();
         $('#glossaryList-nav').empty();
     });
-
+/*
     $('button').on('touchstart', function(e){
         $(this).addClass('tapped');
     });
@@ -84,4 +87,5 @@ $(document).ready(function() {
     $('button').on('touchend', function(e){
         $(this).removeClass('tapped');
     });
+    */
 });

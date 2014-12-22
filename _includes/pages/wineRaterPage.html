@@ -1,14 +1,19 @@
 <div id="wineRaterPage">
   {% include menu.html %}
   <div class="content scrollable">
-    <!--<ul id="wineRaterAnchor"></ul>
+    <ul class="topcoat-list" id="wineRaterAnchor"></ul>
   </div>
-  <script type="text/html"> -->
+<script id="wineRaterTemplate" type="text/html">
   <div class="list">
-    <div class="tile">{wine.title}</div>
-    <div class="company">{wine.company}</div>
-    <div class="points">63</div>
-    <div class="total">total</div>
+    <div class="pull-left">
+      <h2 class="title">{wine.title}</h2>
+      <div class="company">{wine.company}</div>
+    </div>
+    <div class="pull-right">
+      <h2 class="points">{points}</h2>
+      <div class="total">total</div>
+    </div>
+    <div style="clear:both"></div>
   </div>
 
   <div class="header full">Appearance</div>
@@ -118,11 +123,10 @@
         <input id="overall5" name="bubble" type="radio"><label for="overall5">5</label>
     </div>
   </div>
-
-
-
-
-<!-- </script> -->
+  <textarea id="comments" placeholder="Write your comments" rows="2"></textarea>
+  <div class="center">
+    <button  class="topcoat-button">Send</button>
+  </div>
+</script>
 </div>
 
-  </div>
