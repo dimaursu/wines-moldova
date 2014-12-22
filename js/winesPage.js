@@ -41,9 +41,9 @@ function winesPage(tt, url) {
   $("#wineList").html(liItems);
 
   var myScroll;
-  myScroll = new IScroll('#wineList');
-  myScroll.reloadPage();
-
-  console.log('IN');
+  myScroll = new IScroll('#scroll-wrapper', {
+    mouseWheel: true,
+    scrollbars: true
+  });
 
 };
