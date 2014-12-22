@@ -1,16 +1,23 @@
 <div id="winesPage">
-  {% include menu.html %}
-  <div class="content scrollable">
-    <ul id="wineList" class="topcoat-list"></ul>
-  </div>
+    {% include menu.html %}
+    <div id="scroll-wrapper" class="content scrollable">
+        <ul id="wineList" class="topcoat-list"></ul>
+    </div>
 </div>
 
 <script id="wine-items-page" type="text/html">
     <li data-id="{id}" class="wineItem card">
         <div class="spotlight"><img src="{thumbnail}"></div>
         <p class="edition">{vintage} {edition}</p>
+
         <p class="label">{label}</p>
+
         <p class="company">{company}</p>
+
         <div class="nextArrow"></div>
     </li>
+</script>
+
+<script>
+
 </script>
