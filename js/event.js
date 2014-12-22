@@ -33,7 +33,6 @@ function eventPage(tt, id) {
       dust.render("wine", itemData, function (err, out) {
         $("#eventItemContent").html(out);
       });
-
     });
 
 };

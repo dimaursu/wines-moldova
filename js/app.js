@@ -9,12 +9,19 @@ $(document).ready(function() {
     // Go to home page.
     tt.goTo('home');
 
-    // *** Routes.
-
+    // Event aggregation
+    //
+    // View company wines
+    tt.on('click', 'a#view-company-wines', function () {
+        tt.goTo('wineryItemTemplate');
+        wineByCompany(tt, $(this).data('id'));
+    });
+    //
     // Winery page.
     tt.on('click', 'li.wineryItem', function () {
         winery(tt, $(this).data('id'));
     });
+
 
     // Winery events.
     tt.on('click', 'li.eventItem', function () {
@@ -25,10 +32,9 @@ $(document).ready(function() {
     tt.on('click', 'li.foodItem', function () {
         wineFoodMatching(tt, $(this).data('id'));
     });
-
-    // View company wines
-    tt.on('click', 'a#view-company-wines', function () {
-        wineByCompany(tt, $(this).data('id'));
+    // Wine item page.
+    tt.on('click', 'a#company-by-wine', function() {
+        winery(tt, $(this).data('id'));
     });
 
     // Wine item page.
@@ -36,10 +42,8 @@ $(document).ready(function() {
         wineItem(tt, $(this).data('id'));
     });
 
-    // Wine item page.
-    tt.on('click', 'a#company-by-wine', function() {
-        winery(tt, $(this).data('id'));
-    });
+
+
 
     tt.on(tt.EVENTS.PAGE_START, 'wineRaterPage', function() {
         wineRater();
@@ -79,13 +83,12 @@ $(document).ready(function() {
         $('#glossaryList').empty();
         $('#glossaryList-nav').empty();
     });
-/*
-    $('button').on('touchstart', function(e){
+
+    $('button').on('touchstart', function(){
         $(this).addClass('tapped');
     });
 
-    $('button').on('touchend', function(e){
+    $('button').on('touchend', function(){
         $(this).removeClass('tapped');
     });
-    */
 });
