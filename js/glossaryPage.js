@@ -35,6 +35,13 @@ function glossaryPage(tt) {
       noMatchText: 'Nothing matched your filter, please click another letter.',
       showCounts: false
     });
+
+    var myScroll;
+    myScroll = new IScroll('#glossary-scroll-wrapper', {
+      mouseWheel: true,
+      scrollbars: true
+    });
+
   });
 
 };
