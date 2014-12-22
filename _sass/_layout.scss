@@ -1,5 +1,13 @@
 @import 'colors';
 
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
 .content {
     background-color: $primary;
 }
