@@ -42,9 +42,6 @@ $(document).ready(function() {
         wineItem(tt, $(this).data('id'));
     });
 
-
-
-
     tt.on(tt.EVENTS.PAGE_START, 'wineRaterPage', function() {
         wineRater();
     }).on(tt.EVENTS.PAGE_END, 'wineRaterPage', function() {
@@ -74,6 +71,27 @@ $(document).ready(function() {
         // Load wines then call this page.
     }).on(tt.EVENTS.PAGE_END, 'wineFoodMatchingTemplate', function() {
         // @TODO.
+    });
+
+    // Wines.
+    tt.on(tt.EVENTS.PAGE_START, 'wineTastingSelectWinePage', function() {
+        wineTastingSelectWinePage(tt);
+
+        // Test Wine item page.
+        tt.on('click', 'li.wineTasteItem', function() {
+            initAmateur();
+
+            wineTastingItemPage(tt, $(this).data('id'));
+        });
+
+    }).on(tt.EVENTS.PAGE_END, 'wineTastingSelectWinePage', function() {
+        // @TODO.
+    });
+
+    // Coming soon.
+    tt.on(tt.EVENTS.PAGE_START, 'comingSoonTemplate', function() {
+        comingSoon(tt);
+    }).on(tt.EVENTS.PAGE_END, 'comingSoonTemplate', function() {
     });
 
     // Glossary.

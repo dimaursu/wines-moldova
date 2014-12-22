@@ -1,0 +1,80 @@
+<div id="wineTastingItemPage">
+    {% include menu.html %}
+
+    <div class="center">
+        <div id="wine-testing-item-wine-name"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="wine-testing-item-scroll-wrapper" class="content scrollable">
+        <div id="wine-tasting-amateur-step1-template-placeholder"></div>
+    </div>
+</div>
+
+<script id="wine-testing-item-head-template" type="text/html">
+    <div class="spotlight"><img src="{thumbnail}"></div>
+    <div class="description"><h2>
+        <span class="edition">{vintage} {edition}</span>
+        <span class="label">{label}</span>
+        <span class="company">{company}</span></h2>
+    </div>
+</script>
+
+<script id="wine-tasting-amateur-radio-template" type="text/html">
+    <input type="radio" name="{name}" data-id="{id}" id="{id}" class="{class}" checked/>
+    <label for="{id}">{label}</label>
+</script>
+
+<script id="wine-tasting-amateur-checkbox-template" type="text/html">
+    <input type="checkbox" name="{name}" data-id="{id}" class="{class}" checked/>
+    <label for="{id}">{label}</label>
+</script>
+
+<script id="wine-tasting-amateur-step1-template" type="text/html">
+    <img src="../img/beginner_game_1.jpg">
+
+    <div class="step-1">
+        <h1>Look</h1>
+
+        <p>It is worth taking a good look at the wine, as its appearance can yield a lot of information. It's best to
+            view the wine against a white background, in order to avoid mistaking the colour.</p>
+
+        <h2>Pick up the color of the wine? </h2>
+
+        <!-- VISUAL -->
+        <div class="characteristic"><h2>Visual</h2></div>
+
+        <div class="visual">
+            <div class="characteristic"><h2>Color</h2></div>
+            <div class="color">
+                <section class="component">
+                    <div id="wine-tasting-amateur-step1-characteristic-visual-color-placeholder"></div>
+                </section>
+            </div>
+
+            <div class="characteristic"><h2>Clarity</h2></div>
+            <div class="clarity">
+                <div id="wine-tasting-amateur-step1-characteristic-visual-clarity-placeholder"></div>
+            </div>
+        </div>
+
+        <!-- Aroma -->
+        <div class="characteristic"><h2>Aroma</h2></div>
+
+        <div class="visual">
+            <div class="characteristic"><h2>Aroma level </h2></div>
+            <div class="aroma-level">
+                <section class="component">
+                    <div id="wine-tasting-amateur-step1-characteristic-aroma-aroma-level-placeholder"></div>
+                </section>
+            </div>
+
+            <div class="characteristic"><h2>Aroma</h2></div>
+            <div class="aroma">
+                <div id="wine-tasting-amateur-step1-characteristic-aroma-aroma-placeholder"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+</script>

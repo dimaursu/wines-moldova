@@ -1,0 +1,20 @@
+<div id="wineTastingSelectWinePage">
+  {% include menu.html %}
+
+  <div class="center"><h2>Select wine to taste</h2></div>
+
+  <div id="wine-testing-page-scroll-wrapper" class="content scrollable">
+    <ul id="wineTestingListItems" class="topcoat-list"></ul>
+  </div>
+</div>
+
+<script id="wine-testing-items-page" type="text/html">
+  <li data-id="{id}" class="wineTasteItem card">
+    <div class="spotlight"><img src="{thumbnail}"></div>
+    <div class="description">
+      <p class="edition">{vintage} {edition}</p>
+      <p class="label">{label}</p>
+      <p class="company">{company}</p>
+    </div>
+  </li>
+</script>
